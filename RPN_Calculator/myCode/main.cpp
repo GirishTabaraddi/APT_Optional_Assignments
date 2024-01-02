@@ -182,8 +182,6 @@ int main ()
 
 		RpnCalculator.divide();	// (result of numerator) (result of denominator) /
 
-		//		RpnCalculator.printStack();
-
 		CFraction Result;
 
 		if(RpnCalculator.popResult(Result))
