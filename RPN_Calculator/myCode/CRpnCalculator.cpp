@@ -76,7 +76,7 @@ void CRpnCalculator::divide()
 
 	if(this->m_stack.pop(value1) && this->m_stack.pop(value2))
 	{
-		this->m_stack.push(value1 / value2);
+		this->m_stack.push(value2 / value1);
 	}
 	else
 	{
