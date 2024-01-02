@@ -1,5 +1,7 @@
 # Extension - An RPN Calculator
 
+---
+
 Now you will implement a calculator for evaluating expressions of fractions noted in reversepolish notation.
 
 Reverse polish notation (RPN, also known as postfix notation) is a mathematical notation that puts the operator behind the operands. In contrast, the notation we are accustomed to is called infix notation, because the operator is put between the operands. As a simple example, consider infix noted “3 + 4” which becomes “3 4 +” using postfix notation (see also
@@ -8,6 +10,8 @@ http://en.wikipedia.org/wiki/Reverse_Polish_notation).
 An interesting point about postfix notation is that no parentheses are required for complex expression. Consider the more complex example “(3 + 4) * (5 + 6)”. Using RPN this becomes “3 4 + 5 6 + *”. This simplified processing led to the implementation of RPN in early hand held calculators (burdening the user with the task of rearranging the expression). The German Wikipedia page about RPN shows a picture of such a calculator (http://de.wikipedia.org/wiki/Umgekehrte_Polnische_Notation).
 
 The first step in the implementation of the RPN calculator is providing the calculator’s memory. The memory of an RPN calculator is organized as a stack or LIFO buffer (Last In First Out) that stores the operands until the operation is chosen. The UML diagram below shows the LIFO buffer.
+
+---
 
 ## UML
 
@@ -61,6 +65,8 @@ The first step in the implementation of the RPN calculator is providing the calc
 
 Now add a class that implements the actual RPN calculator as specified by the UML diagram below.
 
+---
+
 ## UML
 
 ---
@@ -103,9 +109,10 @@ Now add a class that implements the actual RPN calculator as specified by the UM
 
 -*m_stack: CLifoBuffer*  
 
-
++*CRpnCalculator(stackSize: int)*  
 +*pushValue(data: const CFraction&): bool*  
 +*popResult(data: CFraction&): bool*  
++*printStack(): void*  
 +*add(): void*  
 +*subtract(): void*  
 +*multiply(): void*  
@@ -124,3 +131,5 @@ Now add a class that implements the actual RPN calculator as specified by the UM
 	2. Implement pushValue() and popValue(). These methods delegate directly to the corresponding methods of the stack attribute (the LIFO buffer).
 	3. The methods add(), subtract(), multiply() and divide() perform the respective operations using the two top values on the stack and replace these values with the result.
 	4. Test the implementation. Create an instance of RpnCalculator. Write a test program that invokes its methods as necessary to evaluate and print the result. There may be only a single invocation of popResult() in your code.
+
+---
